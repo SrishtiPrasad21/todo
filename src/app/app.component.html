@@ -6,7 +6,7 @@
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item cardLabel topicContainer" *ngFor="let todo of toDoList">
+          <li class="list-group-item cardLabel topicContainer" *ngFor="let todo of toDoList" (click)="showEditToDo(todo)">
             <div class="topic-header">
               {{ todo.header }}
             </div>
@@ -23,7 +23,7 @@
 
       <div class="card-footer">
         <span class="addACard plusIcon">+</span>
-        <span class="addACard" (click)="showAddEditToDo()">Add a card</span>
+        <span class="addACard" (click)="showAddToDo()">Add a card</span>
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item cardLabel topicContainer" *ngFor="let todo of progressList">
+          <li class="list-group-item cardLabel topicContainer" *ngFor="let todo of progressList" (click)="showEditToDo(todo)">
             <div class="topic-header">
               {{ todo.header }}
             </div>
@@ -59,7 +59,7 @@
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item cardLabel topicContainer" *ngFor="let todo of doneList">
+          <li class="list-group-item cardLabel topicContainer" *ngFor="let todo of doneList" (click)="showEditToDo(todo)">
             <div class="topic-header">
               {{ todo.header }}
             </div>

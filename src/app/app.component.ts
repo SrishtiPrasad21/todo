@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Subject } from 'rxjs';
 import { AddToDoComponent } from './add-to-do/add-to-do.component';
 
 @Component({
@@ -44,12 +45,44 @@ export class AppComponent {
     
   }
 
-  showAddEditToDo() {
+  showAddToDo() {
     const initialState = {
       header: '',
-      body: ''
+      body: '',
+      type: 'add'
     };
     this.bsModalRef = this.modalService.show(AddToDoComponent, {initialState});
-    // this.bsModalRef.content.closeBtnName = 'Close';
+    this.bsModalRef.content.modalRef = this.bsModalRef;
+    this.bsModalRef.content.addEditSubject.subscribe((result: any) => {
+      this.toDoList.push(result);
+    });
+  }
+
+  showEditToDo(param: any) {
+    const initialState = {
+      header: param.header,
+      body: param.body,
+      type: 'edit'
+    };
+    this.bsModalRef = this.modalService.show(AddToDoComponent, {initialState});
+    this.bsModalRef.content.modalRef = this.bsModalRef;
+    this.bsModalRef.content.addEditSubject.subscribe((result: any) => {
+      const selectedObj = this.toDoList.filter(obj => obj.header === result.header);
+      if (selectedObj.length > 0) {
+        selectedObj[0].header = result.header;
+        selectedObj[0].body = result.body;
+      }
+    });
+    this.bsModalRef.content.deleteSubject.subscribe((header: string) => {
+      let objIndex;
+      this.toDoList.forEach((obj, index) => {
+        if (obj.header === header) {
+          objIndex = index;
+        }
+      });
+      if (objIndex) {
+        this.toDoList.splice(objIndex, 1);
+      }
+    });
   }
 }

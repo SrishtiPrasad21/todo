@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddToDoComponent } from './add-to-do/add-to-do.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     ModalModule.forRoot(),
   ],

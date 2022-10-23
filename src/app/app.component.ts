@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { AddToDoComponent } from './add-to-do/add-to-do.component';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo';
+  bsModalRef: BsModalRef | undefined;
 
   toDoList = [
     {
@@ -36,4 +39,17 @@ export class AppComponent {
       body: 'Celebrate Diwali festival with family and friends.'
     }
   ];
+
+  constructor(private modalService: BsModalService) {
+    
+  }
+
+  showAddEditToDo() {
+    const initialState = {
+      header: '',
+      body: ''
+    };
+    this.bsModalRef = this.modalService.show(AddToDoComponent, {initialState});
+    // this.bsModalRef.content.closeBtnName = 'Close';
+  }
 }

@@ -1,0 +1,62 @@
+.todoContainer {
+    height: 95vh;
+    border: 1px solid #c5c5c5;
+    padding: 0px;
+}
+
+.card-header {
+    color: #1a237e;
+    background: #dddddd;
+    font-weight: 500;
+    border: 0px;
+}
+
+.cardLabel {
+    color: #283593;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.card-body {
+    padding: 5px;
+    background: #dddddd;
+    padding: 0px 5px 0px 15px;
+}
+
+.card-footer {
+    background: #dddddd;
+    border: 0px;
+}
+
+.addACard {
+    margin-left: 5px;
+    color: #1a237e;
+    font-weight: 500;
+}
+
+.plusIcon {
+    font-size: 20px;
+    line-height: 16px;
+}
+
+.topicContainer {
+    box-shadow: 1px 2px 4px 1px grey;
+    margin-top: 10px;
+}
+
+.topicContainer:first-child {
+    margin-top: 10px;
+}
+
+.topicContainer:last-child {
+    margin-bottom: 10px;
+}
+
+.topic-header {
+    font-size: 14px;
+}
+
+.topic-body {
+    font-size: 13px;
+    font-weight: 400;
+}

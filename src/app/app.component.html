@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="col-4 todoContainer">
+    <div class="card">
+      <div class="card-header">
+        TO DO
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item cardLabel topicContainer" *ngFor="let todo of toDoList">
+            <div class="topic-header">
+              {{ todo.header }}
+            </div>
+            <div class="topic-body">
+              {{ todo.body }}
+            </div>
+          </li>
+
+          
+
+
+        </ul>
+      </div>
+
+      <div class="card-footer">
+        <span class="addACard plusIcon">+</span>
+        <span class="addACard">Add a card</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 todoContainer">
+    <div class="card">
+      <div class="card-header">
+        Progress
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item cardLabel topicContainer" *ngFor="let todo of progressList">
+            <div class="topic-header">
+              {{ todo.header }}
+            </div>
+            <div class="topic-body">
+              {{ todo.body }}
+            </div>
+          </li>
+
+          
+
+
+        </ul>
+      </div>
+
+      
+    </div>
+  </div>
+  <div class="col-4 todoContainer">
+    <div class="card">
+      <div class="card-header">
+        Done
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item cardLabel topicContainer" *ngFor="let todo of doneList">
+            <div class="topic-header">
+              {{ todo.header }}
+            </div>
+            <div class="topic-body">
+              {{ todo.body }}
+            </div>
+          </li>
+
+          
+
+
+        </ul>
+      </div>
+
+      
+    </div>
+  </div>
+</div>

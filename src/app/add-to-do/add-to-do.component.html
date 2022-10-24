@@ -19,6 +19,21 @@
                 <td><label for="">Message</label></td>
                 <td style="width: 100%;"><input type="text" class="text-control" style="width: 100%;" [(ngModel)]="body"></td>
             </tr>
+            <tr class="mt-2">
+                <td><label for="">Due By</label></td>
+                <td style="width: 100%;">
+                    <div class="row">
+                        <div class="col-xs-12 col-12 col-md-4 form-group">
+                          <input type="text" container="body"
+                                 placeholder="Datepicker"
+                                 class="form-control"
+                                 [(ngModel)]="dueDate"
+                                 bsDatepicker>
+                        </div>
+                        
+                      </div>
+                </td>
+            </tr>
         </table>
     </div>
     <div class="card-footer">

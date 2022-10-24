@@ -14,32 +14,39 @@ export class AppComponent {
   title = 'todo';
   bsModalRef: BsModalRef | undefined;
 
+  todaysDate = new Date();
+
   toDoList = [
     {
       header: 'Pay Electricity Bill',
-      body: 'Pay electricity bill by 21 Oct.'
+      body: 'Pay electricity bill by 21 Oct.',
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay() + 2)
     },
     {
       header: 'Collect book from library',
-      body: 'GET RDBMS book from library on 30 Oct.'
+      body: 'GET RDBMS book from library on 30 Oct.',
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay() + 3)
     }
   ];
 
   progressList = [
     {
       header: 'Write a Program',
-      body: 'Write string manipulation program in Python language.'
+      body: 'Write string manipulation program in Python language.',
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay())
     }
   ];
 
   doneList = [
     {
       header: 'Submit Assignment',
-      body: 'Submit SPA assignment before due date.'
+      body: 'Submit SPA assignment before due date.',
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay() - 3)
     },
     {
       header: 'Celebrate Diwali',
-      body: 'Celebrate Diwali festival with family and friends.'
+      body: 'Celebrate Diwali festival with family and friends.',
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay() - 2)
     }
   ];
   currentTheme = 'theme1';

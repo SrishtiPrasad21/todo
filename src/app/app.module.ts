@@ -13,6 +13,7 @@ import { DndListModule } from 'ngx-drag-and-drop-lists';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop'; 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DndModule,
     DragDropModule,
     ModalModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

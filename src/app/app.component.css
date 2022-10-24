@@ -95,3 +95,12 @@
 .themeDropDownContainer {
     transform: translateY(0px) translateX(-150px) !important;
 }
+
+.dueDateContainer {
+    background: #c5cae9;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    border: 1px solid #6d718d;
+}

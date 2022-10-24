@@ -22,15 +22,20 @@
                 <div>
                   <div class="example-box" *ngFor="let item of toDoList"> </div>
                 </div>
-                {{ todo.body }}
+                
+                <div class="row">
+                  <div class="col-9">
+                    {{ todo.body }}
+                  </div>
+                  <div class="col-3 text-end">
+                     <span class="dueDateContainer">
+                      {{ todo.dueDate | date: 'dd/MMM/yyyy' }}
+                     </span>
+                  </div>
+                </div>
               </div>
 
             </li>
-
-
-
-
-
 
           </ul>
         </div>
@@ -58,7 +63,16 @@
                 <div>
                   <div class="example-box" *ngFor="let item of progressList"> </div>
                 </div>
-                {{ todo.body }}
+                <div class="row">
+                  <div class="col-9">
+                    {{ todo.body }}
+                  </div>
+                  <div class="col-3 text-end">
+                    <span class="dueDateContainer">
+                      {{ todo.dueDate | date: 'dd/MMM/yyyy' }}
+                     </span>
+                  </div>
+                </div>
               </div>
             </li>
 
@@ -80,19 +94,18 @@
             </div>
             <div class="col-3 text-end">
               <div class="btn-group" dropdown>
-                <button id="button-basic" dropdownToggle type="button"
-                        aria-controls="dropdown-basic">
-                    <img style="height: 25px;" src="assets/collapseIcon.png" alt="">
+                <button id="button-basic" dropdownToggle type="button" aria-controls="dropdown-basic">
+                  <img style="height: 25px;" src="assets/collapseIcon.png" alt="">
                 </button>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu themeDropDownContainer"
-                    role="menu" aria-labelledby="button-basic" style="background: #80cbc4">
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu themeDropDownContainer" role="menu"
+                  aria-labelledby="button-basic" style="background: #80cbc4">
                   <li role="menuitem">
-                    <img src="assets/Image_1.webp" alt="" class="themeImg" (click)="applyTheme('theme1')">
-                    <img src="assets/Image_2.jpg" alt="" class="themeImg" (click)="applyTheme('theme2')">
-                    <img src="assets/Image_3.jpg" alt="" class="themeImg" (click)="applyTheme('theme3')">
-                    <img src="assets/Image_4.jpg" alt="" class="themeImg" (click)="applyTheme('theme4')">
+                    <img src="assets/Image_1.webp" alt="" class="themeImg" (click)="applyTheme('theme1')"><br>
+                    <img src="assets/Image_2.jpg" alt="" class="themeImg" (click)="applyTheme('theme2')"><br>
+                    <img src="assets/Image_3.jpg" alt="" class="themeImg" (click)="applyTheme('theme3')"><br>
+                    <img src="assets/Image_4.jpg" alt="" class="themeImg" (click)="applyTheme('theme4')"><br>
                   </li>
-                
+
                 </ul>
               </div>
             </div>
@@ -110,7 +123,16 @@
                 <div>
                   <div class="example-box" *ngFor="let item of doneList"> </div>
                 </div>
-                {{ todo.body }}
+                <div class="row">
+                  <div class="col-9">
+                    {{ todo.body }}
+                  </div>
+                  <div class="col-3 text-end">
+                    <span class="dueDateContainer">
+                      {{ todo.dueDate | date: 'dd/MMM/yyyy' }}
+                     </span>              
+                  </div>
+                </div>
               </div>
             </li>
 

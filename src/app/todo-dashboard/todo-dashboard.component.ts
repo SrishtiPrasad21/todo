@@ -58,7 +58,9 @@ export class TodoDashboardComponent implements OnInit {
     
   }
   ngOnInit(): void {
-    this.showActionalMessage();
+    setTimeout(() => {
+      this.showActionalMessage();
+    }, 5000);
   }
 
   showActionalMessage(): void {

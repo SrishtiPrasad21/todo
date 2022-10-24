@@ -62,3 +62,36 @@
     font-size: 13px;
     font-weight: 400;
 }
+
+.theme1 {
+    background-image: url('./../assets/Image_1.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.theme2 {
+    background-image: url('./../assets/Image_2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.theme3 {
+    background-image: url('./../assets/Image_3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.theme4 {
+    background-image: url('./../assets/Image_4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.themeImg {
+    height: 25px;
+    border: 1px solid green;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.themeDropDownContainer {
+    transform: translateY(0px) translateX(-150px) !important;
+}

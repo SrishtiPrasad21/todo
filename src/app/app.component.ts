@@ -42,6 +42,7 @@ export class AppComponent {
       body: 'Celebrate Diwali festival with family and friends.'
     }
   ];
+  currentTheme = 'theme1';
 
   constructor(private modalService: BsModalService) {
     
@@ -103,5 +104,13 @@ export class AppComponent {
         event.currentIndex,
       );
     }
+  }
+
+  applyTheme(themeName: string): void {
+    this.currentTheme = themeName;
+  }
+
+  getTheme(): string {
+    return this.currentTheme;
   }
 }

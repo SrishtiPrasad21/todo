@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
 import { AddToDoComponent } from './add-to-do/add-to-do.component';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-root',
@@ -84,5 +86,22 @@ export class AppComponent {
         this.toDoList.splice(objIndex, 1);
       }
     });
+  }
+
+  onDraggableMoved(param: any): void {
+    console.log(param);
+  }
+
+  drop(event: CdkDragDrop<any>) :void {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
   }
 }

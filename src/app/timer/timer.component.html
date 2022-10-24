@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-12 text-center" style="margin-top: 40vh;">
+        <div class="d-inline-flex differentTypeTimer">
+            <div class="timerText" (click)="onTimerStart(25, 0)">Pomodoro</div>
+            <div class="timerText" (click)="onTimerStart(5, 0)">Short Break</div>
+            <div class="timerText" (click)="onTimerStart(15, 0)">Long Break</div>
+        </div>
+        <div>
+            <span class="timerContainer">{{ min }} : {{ sec }}</span>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <button class="btn btn-sm btn-success" (click)="onStart()">Start</button>
+            <button class="btn btn-sm btn-warning" style="margin-left: 10px;" (click)="onPause()">Pause</button>
+        </div>
+        
+    </div>
+</div>

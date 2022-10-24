@@ -16,11 +16,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { TimerComponent } from './timer/timer.component';
+import { TodoDashboardComponent } from './todo-dashboard/todo-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddToDoComponent
+    AddToDoComponent,
+    TimerComponent,
+    TodoDashboardComponent
   ],
   imports: [
     CommonModule,

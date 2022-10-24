@@ -1,31 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
 import { AddToDoComponent } from './add-to-do/add-to-do.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'todo';
   bsModalRef: BsModalRef | undefined;
 
   todaysDate = new Date();
-
   toDoList = [
     {
       header: 'Pay Electricity Bill',
-      body: 'Pay electricity bill by 21 Oct.',
-      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay() + 2)
+      body: `Pay electricity bill by ${(new Date()).getDate()} Oct.`,
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDate() + 1)
     },
     {
       header: 'Collect book from library',
       body: 'GET RDBMS book from library on 30 Oct.',
-      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay() + 3)
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDate() + 3)
     }
   ];
 
@@ -33,7 +32,7 @@ export class AppComponent {
     {
       header: 'Write a Program',
       body: 'Write string manipulation program in Python language.',
-      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay())
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDate())
     }
   ];
 
@@ -41,18 +40,36 @@ export class AppComponent {
     {
       header: 'Submit Assignment',
       body: 'Submit SPA assignment before due date.',
-      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay() - 3)
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDate() - 3)
     },
     {
       header: 'Celebrate Diwali',
       body: 'Celebrate Diwali festival with family and friends.',
-      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDay() - 2)
+      dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDate() - 2)
     }
   ];
   currentTheme = 'theme1';
 
-  constructor(private modalService: BsModalService) {
+  constructor(
+    private modalService: BsModalService,
+    private toastr: ToastrService
+    ) {
     
+  }
+  ngOnInit(): void {
+    this.showActionalMessage();
+  }
+
+  showActionalMessage(): void {
+    const date = new Date();
+    const todaysStartDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0, 0)
+    const todaysEndDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1, 23, 59, 59, 0)
+    const actionaToDo = this.toDoList.filter(todoObj => todoObj.dueDate.getTime() > todaysStartDate.getTime() && todoObj.dueDate.getTime() < todaysEndDate.getTime());
+    if (actionaToDo.length > 0) {
+      actionaToDo.forEach(todoObj => {
+        this.showToasterMessage(todoObj.body, todoObj.header);
+      });
+    }
   }
 
   showAddToDo() {
@@ -119,5 +136,13 @@ export class AppComponent {
 
   getTheme(): string {
     return this.currentTheme;
+  }
+
+  showToasterMessage(header: string, body: string) {
+    this.toastr.error(header, body, {
+      timeOut: 10000,
+      closeButton: true,
+      progressBar: true
+    });
   }
 }

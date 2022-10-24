@@ -14,6 +14,8 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     AddToDoComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     DndModule,
     DragDropModule,
+    ToastrModule.forRoot(),
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),

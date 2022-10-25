@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { Subject } from 'rxjs';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { ToastrService } from 'ngx-toastr';
 import { AddToDoComponent } from '../add-to-do/add-to-do.component';

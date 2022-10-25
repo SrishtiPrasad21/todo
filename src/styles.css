@@ -25,3 +25,8 @@ figure,
 picture {
     margin: 0; 
 }
+
+
+.mat-drawer-inner-container {
+    background: #e7daff;
+}

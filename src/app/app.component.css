@@ -21,3 +21,36 @@ box-shadow: 0px 0px 3px #bdbcbc;
     margin: 3px; 
     overflow: hidden;
   }
+
+  .theme1 {
+    background-image: url('./../assets/Image_1.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.theme2 {
+    background-image: url('./../assets/Image_2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.theme3 {
+    background-image: url('./../assets/Image_3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.theme4 {
+    background-image: url('./../assets/Image_4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.themeImg {
+    height: 25px;
+    border: 1px solid green;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.themeDropDownContainer {
+    transform: translateY(6px) translateX(-70px) !important;
+}

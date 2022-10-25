@@ -49,7 +49,7 @@ export class TodoDashboardComponent implements OnInit {
       dueDate: new Date(this.todaysDate.getFullYear(), this.todaysDate.getMonth(), this.todaysDate.getDate() - 2)
     }
   ];
-  currentTheme = 'theme1';
+  
 
   constructor(
     private modalService: BsModalService,
@@ -131,14 +131,6 @@ export class TodoDashboardComponent implements OnInit {
         event.currentIndex,
       );
     }
-  }
-
-  applyTheme(themeName: string): void {
-    this.currentTheme = themeName;
-  }
-
-  getTheme(): string {
-    return this.currentTheme;
   }
 
   showToasterMessage(header: string, body: string) {

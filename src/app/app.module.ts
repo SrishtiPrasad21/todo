@@ -23,6 +23,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatIconModule} from '@angular/material/icon';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatIconModule} from '@angular/material/icon';
     AddToDoComponent,
     TimerComponent,
     TodoDashboardComponent,
-    SidenavComponent
+    SidenavComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,

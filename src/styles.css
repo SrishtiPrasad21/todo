@@ -27,6 +27,10 @@ picture {
 }
 
 
-.mat-drawer-inner-container {
-    background: #e7daff;
+/* .mat-drawer-inner-container {
+    background: white;
+} */
+
+.mat-button .mat-button-wrapper>*, .mat-flat-button .mat-button-wrapper>*, .mat-stroked-button .mat-button-wrapper>*, .mat-raised-button .mat-button-wrapper>*, .mat-icon-button .mat-button-wrapper>*, .mat-fab .mat-button-wrapper>*, .mat-mini-fab .mat-button-wrapper>* {
+    color: #6a1b9a;
 }

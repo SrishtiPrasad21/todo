@@ -6,7 +6,8 @@ import { TodoDashboardComponent } from './todo-dashboard/todo-dashboard.componen
 const routes: Routes = [
   {path: 'dashboard', component: TodoDashboardComponent},
   {path: 'timer', component: TimerComponent},
-  {path: '', component: TodoDashboardComponent}
+  {path: '', component: TodoDashboardComponent},
+  
 ];
 
 @NgModule({

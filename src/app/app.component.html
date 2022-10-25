@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<mat-toolbar class="ff-serif">
+    MyToDo
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <div class="appContent">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>

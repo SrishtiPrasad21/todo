@@ -1,0 +1,23 @@
+mat-toolbar{
+    background: #673ab7;
+    color: #fff;
+    height: 50px;
+    font-weight: 400;
+    font-size: 27px;
+    padding-left: 2.5rem;
+}
+mat-sidenav-container{
+    height: calc(100vh - 50px);
+}
+mat-sidenav{
+background: #f3f3f3;
+box-shadow: 0px 0px 3px #bdbcbc;
+
+}
+
+.appContent {
+    height: calc(100vh - 56px);
+    border-radius: 5px;
+    margin: 3px; 
+    overflow: hidden;
+  }

@@ -1,4 +1,4 @@
-<div [ngClass]="getTheme()">
+<div [ngClass]="getTheme()" class="mainContent">
     <div class="row " cdkDropListGroup>
       <div class="col-4 todoContainer example-container">
         <div class="card ">
@@ -89,17 +89,17 @@
         <div class="card">
           <div class="card-header">
             <div class="row">
-              <div class="col-9">
+              <div class="col-9 card-header" >
                 Done
               </div>
               <div class="col-3 text-end">
-                <div class="btn-group" dropdown>
+                <div class="btn-group customiseTheme"dropdown>
                   <button id="button-basic" dropdownToggle type="button" aria-controls="dropdown-basic">
                     <img style="height: 25px;" src="assets/collapseIcon.png" alt="">
                   </button>
-                  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu themeDropDownContainer" role="menu"
-                    aria-labelledby="button-basic" style="background: #80cbc4">
-                    <li role="menuitem">
+                  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu themeDropDownContainer" style = "width:100px;" role="menu"
+                    aria-labelledby="button-basic" style="background: #673ab7" >
+                    <li role="menuitem" class = "imgMenu">
                       <img src="assets/Image_1.webp" alt="" class="themeImg" (click)="applyTheme('theme1')"><br>
                       <img src="assets/Image_2.jpg" alt="" class="themeImg" (click)="applyTheme('theme2')"><br>
                       <img src="assets/Image_3.jpg" alt="" class="themeImg" (click)="applyTheme('theme3')"><br>

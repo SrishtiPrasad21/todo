@@ -18,21 +18,31 @@ import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { TimerComponent } from './timer/timer.component';
 import { TodoDashboardComponent } from './todo-dashboard/todo-dashboard.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatButtonModule} from '@angular/material/button';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddToDoComponent,
     TimerComponent,
-    TodoDashboardComponent
+    TodoDashboardComponent,
+    SidenavComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
+    MatIconModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     DndModule,
+    MatToolbarModule,
+    MatSidenavModule,
     DragDropModule,
     ToastrModule.forRoot(),
     ModalModule.forRoot(),

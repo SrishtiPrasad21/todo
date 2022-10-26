@@ -11,6 +11,7 @@ export class AddToDoComponent implements OnInit {
   header = '';
   body = '';
   type = ''
+  oldHeader = '';
   dueDate = new Date();
   modalRef: BsModalRef | undefined;
   addEditSubject = new Subject<any>();
@@ -35,7 +36,8 @@ export class AddToDoComponent implements OnInit {
     const addEditRow = {
       header: this.header,
       body: this.body,
-      dueDate: this.dueDate
+      dueDate: this.dueDate,
+      oldHeader: this.oldHeader
     }
     this.addEditSubject.next(addEditRow);
     if (this.modalRef) {

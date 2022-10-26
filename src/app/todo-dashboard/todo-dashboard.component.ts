@@ -59,7 +59,7 @@ export class TodoDashboardComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.showActionalMessage();
-    }, 5000);
+    }, 1000);
   }
 
   showActionalMessage(): void {
@@ -91,12 +91,13 @@ export class TodoDashboardComponent implements OnInit {
     const initialState = {
       header: param.header,
       body: param.body,
-      type: 'edit'
+      type: 'edit',
+      oldHeader: param.header
     };
     this.bsModalRef = this.modalService.show(AddToDoComponent, {initialState});
     this.bsModalRef.content.modalRef = this.bsModalRef;
     this.bsModalRef.content.addEditSubject.subscribe((result: any) => {
-      const selectedObj = this.toDoList.filter(obj => obj.header === result.header);
+      const selectedObj = this.toDoList.filter(obj => obj.header === result.oldHeader);
       if (selectedObj.length > 0) {
         selectedObj[0].header = result.header;
         selectedObj[0].body = result.body;
